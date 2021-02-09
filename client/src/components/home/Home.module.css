@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: #282c34;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.input {
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  font-family: cursive;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  color: #282c34;
+}
+
+.button {
+  border: none;
+  outline: none;
+  padding: 20px;
+  width: 200px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #282c34;
+}
+
+.error {
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
+.details {
+  font-size: 1.5rem;
+  font-family: cursive;
+  color: white;
+  height: 100%;
+  margin: auto;
+}
