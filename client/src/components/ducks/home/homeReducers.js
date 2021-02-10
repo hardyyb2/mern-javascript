@@ -1,4 +1,4 @@
-import types from "./types";
+import types from "./homeActionTypes";
 
 const INITIAL_STATE = {
   name: "",

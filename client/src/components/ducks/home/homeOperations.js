@@ -1,4 +1,4 @@
-import actions from "./actions";
+import actions from "./homeActions";
 import { ClientLibrary } from "../../../lib";
 
 const db = new ClientLibrary();

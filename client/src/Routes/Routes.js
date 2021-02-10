@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { Spinner } from "../common";
 
-const Home = lazy(() => import("../components/home"));
+const Home = lazy(() => import("../pages/home"));
 
 const Routes = () => {
   return (

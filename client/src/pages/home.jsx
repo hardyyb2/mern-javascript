@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { homeOperations } from "./duck";
+import { homeOperations } from "../components/ducks";
 
-import styles from "./Home.module.css";
+import styles from "../styles/PageStyles/Home.module.css";
 
 const HomeComponent = () => {
   const { error, loading } = useSelector((state) => state.home);

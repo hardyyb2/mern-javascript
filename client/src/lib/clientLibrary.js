@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_PATH =
-  process.env.REACT_APP_BASE_URL || `http://localhost:3000/api/v1.1`;
+  process.env.REACT_APP_BASE_URL || `http://localhost:3001/api/v1.1`;
 
 class ClientLibrary {
   constructor() {
