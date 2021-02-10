@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { homeOperations } from "./duck";
 
 import styles from "./Home.module.css";
 
-const HomeComponent = ({
-  name,
-  age,
-  error,
-  loading,
-  fetchNameConnect,
-  addNameConnect,
-}) => {
+const HomeComponent = () => {
+  const { error, loading } = useSelector((state) => state.home);
+
+  const dispatch = useDispatch();
+
   const [newName, setNewName] = useState("");
   const [newAge, setNewAge] = useState("");
   const [err, setErr] = useState("");
@@ -37,7 +37,7 @@ const HomeComponent = ({
     } else if (!newAge) {
       return setErr("Please enter Age");
     }
-    addNameConnect(newName, parseInt(newAge));
+    dispatch(homeOperations.addName(newName, parseInt(newAge)));
     setTimeout(() => {
       checkDetails();
     }, 1000);
