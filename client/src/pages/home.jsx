@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import { Input } from "../components";
+
 import { homeOperations } from "../store/ducks";
 
 import styles from "../styles/PageStyles/Home.module.css";
@@ -62,23 +64,8 @@ const HomeComponent = () => {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.form}>
-          <input
-            type="text"
-            placeholder="Enter Name..."
-            value={newName}
-            name="name"
-            onChange={handleChange}
-            className={styles.input}
-          />
-          <input
-            type="text"
-            placeholder="Enter Age..."
-            value={newAge}
-            name="age"
-            onChange={handleChange}
-            className={styles.input}
-          />
-
+          <Input value={newName} name="name" onChange={handleChange} />
+          <Input value={newAge} name="age" onChange={handleChange} />
           <button type="submit" disabled={loading} className={styles.button}>
             {loading ? "Wait" : "Submit"}
           </button>

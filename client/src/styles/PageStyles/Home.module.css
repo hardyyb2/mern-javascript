@@ -12,18 +12,6 @@
   margin: auto;
 }
 
-.input {
-  padding: 15px;
-  border: none;
-  outline: none;
-  font-size: 1.4rem;
-  font-family: cursive;
-  display: block;
-  margin: auto;
-  margin-top: 20px;
-  color: #282c34;
-}
-
 .button {
   border: none;
   outline: none;
