@@ -24,7 +24,6 @@ const HomeComponent = () => {
   const checkDetails = () => {
     let userDetails = getFromLocalStorage(USER_DETAILS_KEY);
     if (userDetails) {
-      userDetails = JSON.parse(userDetails);
       setOldName(userDetails.name);
       setOldAge(userDetails.age);
     }
