@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Input } from "../common";
+import { getFromLocalStorage } from "../utils/functions";
+import { USER_DETAILS_KEY } from "../utils/constants";
 
 import { homeOperations } from "../store/ducks";
 
 import styles from "../styles/PageStyles/Home.module.css";
 
 const HomeComponent = () => {
-  const { error, loading } = useSelector((state) => state.home);
+  const { error } = useSelector((state) => state.home);
 
   const dispatch = useDispatch();
 
@@ -20,7 +22,7 @@ const HomeComponent = () => {
   const [oldAge, setOldAge] = useState("");
 
   const checkDetails = () => {
-    let userDetails = localStorage.getItem("userDetails");
+    let userDetails = getFromLocalStorage(USER_DETAILS_KEY);
     if (userDetails) {
       userDetails = JSON.parse(userDetails);
       setOldName(userDetails.name);
@@ -66,8 +68,8 @@ const HomeComponent = () => {
         <form onSubmit={handleSubmit} className={styles.form}>
           <Input value={newName} name="name" onChange={handleChange} />
           <Input value={newAge} name="age" onChange={handleChange} />
-          <button type="submit" disabled={loading} className={styles.button}>
-            {loading ? "Wait" : "Submit"}
+          <button type="submit" className={styles.button}>
+            Submit
           </button>
           <div className={styles.error}>
             {err} <br /> {error}

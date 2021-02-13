@@ -1,5 +1,7 @@
 import actions from "./homeActions";
 import { ClientLibrary } from "../../../lib";
+import { saveToLocalStorage } from "../../../utils/functions";
+import { USER_DETAILS_KEY } from "../../../utils/constants";
 
 const db = new ClientLibrary();
 
@@ -26,7 +28,7 @@ const addName = (name, age) => async (dispatch) => {
 
   try {
     await db.createName(name, age);
-    localStorage.setItem("userDetails", JSON.stringify({ name, age }));
+    saveToLocalStorage(USER_DETAILS_KEY, { name, age });
 
     dispatch(actions.savedName());
   } catch (err) {
