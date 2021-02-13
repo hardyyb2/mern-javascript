@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 
-import homeReducer from "../components/ducks/home";
+import homeReducer from "./ducks/home";
 
 export default combineReducers({ home: homeReducer });

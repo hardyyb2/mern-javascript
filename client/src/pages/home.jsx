@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { homeOperations } from "../components/ducks";
+import { homeOperations } from "../store/ducks";
 
 import styles from "../styles/PageStyles/Home.module.css";
 
