@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Input } from "../components";
+import { Input } from "../common";
 
 import { homeOperations } from "../store/ducks";
 
