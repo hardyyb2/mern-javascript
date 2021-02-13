@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #282c34;
+  --secondary-color: #efefef;
+}
+
+body {
+  color: var(--primary-color);
+  overflow-y: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
