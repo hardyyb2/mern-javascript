@@ -13,32 +13,32 @@ const {
 } = Messages;
 
 const getName = asyncHandler(async (req, res, next) => {
-  const { name: reqName } = req.params;
+  const { name } = req.params;
 
-  if (!reqName) {
+  if (!name) {
     return next(new ErrorResponse(PROVIDE_NAME, 400));
   }
 
-  const name = await NameModel.findOne({ name: reqName });
+  const foundName = await NameModel.findOne({ name });
 
-  if (!name) {
+  if (!foundName) {
     return next(new ErrorResponse(NOT_FOUND, 404));
   }
 
-  return send(res, 200, name);
+  return send(res, 200, foundName);
 });
 
 const postName = asyncHandler(async (req, res, next) => {
-  const { name: reqName, age } = req.body;
+  const { name, age } = req.body;
 
-  if (!reqName) {
+  if (!name) {
     return next(new ErrorResponse(PROVIDE_NAME, 400));
   } else if (!age) {
     return next(new ErrorResponse(PROVIDE_AGE, 400));
   }
 
-  const name = new NameModel({ name: reqName, age });
-  await name.save();
+  const newName = new NameModel({ name, age });
+  await newName.save();
 
   return send(res, 201, CREATED);
 });
