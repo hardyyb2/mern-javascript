@@ -21,7 +21,7 @@ mongoose
   });
 
 mongoose.connection.on("connected", () => {
-  dbSuccessLog(`Mongoose connected to ${process.env.MONGODB_URI}`);
+  dbSuccessLog(`Mongoose connected to ${MONGODB_URI}`);
 });
 mongoose.connection.on("error", (err) => {
   dbErrorLog("Mongoose connection error:", err);
