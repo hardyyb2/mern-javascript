@@ -1,5 +1,9 @@
 .App {
   text-align: center;
-  min-width: 100vw;
+  background-color: var(--primary-color);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
 }

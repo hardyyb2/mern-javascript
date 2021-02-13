@@ -7,11 +7,11 @@ const Home = lazy(() => import("../pages/home"));
 
 const Routes = () => {
   return (
-    <Switch>
-      <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<Spinner />}>
+      <Switch>
         <Route key="home" path="/" component={Home} />
-      </Suspense>
-    </Switch>
+      </Switch>
+    </Suspense>
   );
 };
 

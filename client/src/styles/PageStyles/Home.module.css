@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-  background-color: #282c34;
+  background-color: var(--primary-color);
 }
 
 .form {
@@ -15,14 +15,14 @@
 .button {
   border: none;
   outline: none;
-  padding: 20px;
+  padding: calc(var(--size) * 2.5);
   width: 200px;
-  font-size: 1.4rem;
+  font-size: 2.5em;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: calc(var(--size) * 2.5);
   cursor: pointer;
-  color: #282c34;
+  color: var(--primary-color);
 }
 
 .error {
