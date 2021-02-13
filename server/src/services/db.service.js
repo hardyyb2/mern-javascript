@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-const Logs = require("../utils/logs");
+const { Logs } = require("../utils");
 
 const { dbSuccessLog, dbErrorLog } = Logs;
 

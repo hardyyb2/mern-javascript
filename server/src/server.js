@@ -3,15 +3,13 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-const errorHandler = require("./middleware/errorHandler");
-const Logs = require("./utils/logs");
+const { NameRoutes } = require("./routes");
+const { errorHandler } = require("./middleware");
+const { Logs } = require("./utils");
 require("./services/db.service");
 
-const NameRoutes = require("./routes/name.route");
-
-const { errorLog, successLog } = Logs;
-
 dotenv.config();
+const { errorLog, successLog } = Logs;
 const app = express();
 app.use(express.json());
 app.use(cors());

@@ -1,9 +1,7 @@
-const asyncHandler = require("../middleware/asyncHandler.js");
-const ErrorResponse = require("../common/errorResponse");
-const send = require("../common/send");
-const messages = require("../utils/messages");
-
-const Name = require("../models/name.model");
+const { NameModel } = require("../models");
+const { asyncHandler } = require("../middleware");
+const { ErrorResponse, send } = require("../common");
+const { Messages } = require("../utils");
 
 const {
   PROVIDE_NAME,
@@ -12,7 +10,7 @@ const {
   CREATED,
   UPDATED,
   DELETED,
-} = messages;
+} = Messages;
 
 const getName = asyncHandler(async (req, res, next) => {
   const { name: reqName } = req.params;
@@ -21,7 +19,7 @@ const getName = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(PROVIDE_NAME, 400));
   }
 
-  const name = await Name.findOne({ name: reqName });
+  const name = await NameModel.findOne({ name: reqName });
 
   if (!name) {
     return next(new ErrorResponse(NOT_FOUND, 404));
@@ -39,7 +37,7 @@ const postName = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(PROVIDE_AGE, 400));
   }
 
-  const name = new Name({ name: reqName, age });
+  const name = new NameModel({ name: reqName, age });
   await name.save();
 
   return send(res, 201, CREATED);
@@ -55,7 +53,7 @@ const updateName = asyncHandler(async (req, res, next) => {
 
   const updatedObj = { name: newName, ...(age && { age }) };
 
-  const updatedName = await Name.findOneAndUpdate(
+  const updatedName = await NameModel.findOneAndUpdate(
     { name: oldName },
     updatedObj,
     {
@@ -78,7 +76,7 @@ const deleteName = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(PROVIDE_NAME, 400));
   }
 
-  const deletedName = await Name.findOneAndDelete({ name });
+  const deletedName = await NameModel.findOneAndDelete({ name });
 
   if (!deletedName) {
     return next(new ErrorResponse(NOT_FOUND, 404));

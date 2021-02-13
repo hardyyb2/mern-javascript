@@ -1,8 +1,8 @@
-const ErrorResponse = require("../common/errorResponse");
-const getDuplicate = require("../utils/getDuplicate");
-const messages = require("../utils/messages");
+const { ErrorResponse } = require("../common");
+const { getDuplicate } = require("../utils");
+const { Messages } = require("../utils");
 
-const { SERVER_ERROR } = messages;
+const { SERVER_ERROR } = Messages;
 
 const errorHandler = (err, res) => {
   let error = { ...err };
