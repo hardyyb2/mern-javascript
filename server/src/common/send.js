@@ -6,4 +6,4 @@ const send = (res, status, data) => {
   return res.status(status).send(resObj);
 };
 
-export default send;
+module.exports = send;

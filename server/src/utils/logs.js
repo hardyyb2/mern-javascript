@@ -1,4 +1,4 @@
-import chalk from "chalk";
+const chalk = require("chalk");
 
 const Log = (msg) => console.log(msg);
 const successLog = (msg) => console.log(chalk.bgGreen.black(msg));
@@ -15,5 +15,4 @@ const Logs = {
   dbSuccessLog,
   dbErrorLog,
 };
-
-export default Logs;
+module.exports = Logs;

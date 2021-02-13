@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-import Logs from "../utils/logs.js";
+const Logs = require("../utils/logs");
 
 const { dbSuccessLog, dbErrorLog } = Logs;
 

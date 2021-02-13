@@ -1,16 +1,16 @@
-import express from "express";
+const express = require("express");
 
 const router = express.Router();
 
-import {
+const {
   getName,
   postName,
   updateName,
   deleteName,
-} from "../controllers/name.controller.js";
+} = require("../controllers/name.controller");
 
 router.route("/:name").get(getName).put(updateName).delete(deleteName);
 
 router.route("/").post(postName);
 
-export default router;
+module.exports = router;

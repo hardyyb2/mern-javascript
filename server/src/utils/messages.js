@@ -8,5 +8,4 @@ const messages = {
   PROVIDE_AGE: "Provide age",
   SERVER_ERROR: "Server Error, Please try again",
 };
-
-export default messages;
+module.exports = messages;

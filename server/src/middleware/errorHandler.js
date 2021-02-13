@@ -1,6 +1,6 @@
-import ErrorResponse from "../common/errorResponse.js";
-import getDuplicate from "../utils/getDuplicate.js";
-import messages from "../utils/messages.js";
+const ErrorResponse = require("../common/errorResponse");
+const getDuplicate = require("../utils/getDuplicate");
+const messages = require("../utils/messages");
 
 const { SERVER_ERROR } = messages;
 
@@ -35,4 +35,4 @@ const errorHandler = (err, res) => {
   });
 };
 
-export default errorHandler;
+module.exports = errorHandler;

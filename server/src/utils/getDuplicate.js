@@ -6,4 +6,4 @@ const getDuplicate = (err) => {
   return str;
 };
 
-export default getDuplicate;
+module.exports = getDuplicate;

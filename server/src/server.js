@@ -1,13 +1,13 @@
-import express from "express";
-import morgan from "morgan";
-import dotenv from "dotenv";
-import cors from "cors";
+const express = require("express");
+const morgan = require("morgan");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
-import errorHandler from "./middleware/errorHandler.js";
-import Logs from "./utils/logs.js";
-import "./services/db.service.js";
+const errorHandler = require("./middleware/errorHandler");
+const Logs = require("./utils/logs");
+require("./services/db.service");
 
-import NameRoutes from "./routes/name.route.js";
+const NameRoutes = require("./routes/name.route");
 
 const { errorLog, successLog } = Logs;
 
