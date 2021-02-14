@@ -10,7 +10,7 @@ import { homeOperations } from "../store/ducks";
 import styles from "../styles/PageStyles/Home.module.css";
 
 const HomeComponent = () => {
-  const { error } = useSelector((state) => state.home);
+  const { error, name, age } = useSelector((state) => state.home);
 
   const dispatch = useDispatch();
 
@@ -18,19 +18,8 @@ const HomeComponent = () => {
   const [newAge, setNewAge] = useState("");
   const [err, setErr] = useState("");
 
-  const [savedName, setSavedName] = useState("");
-  const [savedAge, setSavedAge] = useState("");
-
-  const checkDetails = () => {
-    let userDetails = getFromLocalStorage(USER_DETAILS_KEY);
-    if (userDetails) {
-      setSavedName(userDetails.name);
-      setSavedAge(userDetails.age);
-    }
-  };
-
   useEffect(() => {
-    checkDetails();
+    dispatch(homeOperations.checkDetails());
   }, []);
 
   const handleSubmit = (event) => {
@@ -41,9 +30,6 @@ const HomeComponent = () => {
       return setErr("Please enter Age");
     }
     dispatch(homeOperations.addName(newName, parseInt(newAge)));
-    setTimeout(() => {
-      checkDetails();
-    }, 1000);
   };
 
   const handleChange = (event) => {
@@ -58,22 +44,15 @@ const HomeComponent = () => {
   };
 
   const handleDeleteName = () => {
-    dispatch(homeOperations.deleteName(savedName))
-      .then((res) => {
-        setSavedName("");
-        setSavedAge(0);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(homeOperations.deleteName(name));
   };
 
   return (
     <div className={styles.root}>
-      {savedName ? (
+      {name ? (
         <div className={styles.detailsContainer}>
           <div className={styles.details}>
-            Welcome, {savedName} ( {savedAge} )
+            Welcome, {name} ( {age} )
           </div>
           <button onClick={handleDeleteName} className={styles.button}>
             Delete

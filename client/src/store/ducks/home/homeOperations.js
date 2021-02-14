@@ -2,6 +2,7 @@ import actions from "./homeActions";
 import { ClientLibrary } from "../../../lib";
 import {
   deleteFromLocalStorage,
+  getFromLocalStorage,
   saveToLocalStorage,
 } from "../../../utils/functions";
 import { USER_DETAILS_KEY } from "../../../utils/constants";
@@ -33,7 +34,7 @@ const addName = (name, age) => async (dispatch) => {
     await db.createName(name, age);
     saveToLocalStorage(USER_DETAILS_KEY, { name, age });
 
-    dispatch(actions.savedName());
+    dispatch(actions.receiveName(name, age));
   } catch (err) {
     const { error = DEFAULT_ERR_MESSAGE } = err;
 
@@ -55,10 +56,25 @@ const deleteName = (name) => async (dispatch) => {
   }
 };
 
+const checkDetails = () => async (dispatch) => {
+  dispatch(actions.requestName());
+  try {
+    const userDetails = getFromLocalStorage(USER_DETAILS_KEY);
+    dispatch(
+      actions.receiveName(userDetails?.name || "", userDetails?.age || 0)
+    );
+  } catch (err) {
+    const { error = DEFAULT_ERR_MESSAGE } = err;
+
+    dispatch(actions.receiveNameError(error));
+  }
+};
+
 const operations = {
   fetchName,
   addName,
   deleteName,
+  checkDetails,
 };
 
 export default operations;

@@ -14,10 +14,6 @@ const receiveNameError = (error) => ({
   payload: error,
 });
 
-const savedName = () => ({
-  type: types.SAVED_NAME,
-});
-
 const deletedName = () => ({
   type: types.DELETED_NAME,
 });
@@ -26,7 +22,6 @@ const actions = {
   requestName,
   receiveName,
   receiveNameError,
-  savedName,
   deletedName,
 };
 
