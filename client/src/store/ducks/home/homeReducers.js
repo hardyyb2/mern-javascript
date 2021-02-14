@@ -33,12 +33,6 @@ const homeReducer = (state = INITIAL_STATE, action) => {
         loading: false,
       };
 
-    case types.SAVED_NAME:
-      return {
-        ...state,
-        loading: false,
-      };
-
     case types.DELETED_NAME:
       return INITIAL_STATE;
 
