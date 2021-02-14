@@ -39,6 +39,9 @@ const homeReducer = (state = INITIAL_STATE, action) => {
         loading: false,
       };
 
+    case types.DELETED_NAME:
+      return INITIAL_STATE;
+
     default:
       return state;
   }

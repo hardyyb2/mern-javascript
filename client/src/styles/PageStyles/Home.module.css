@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
+  min-width: 100%;
   background-color: var(--primary-color);
 }
 
@@ -29,6 +29,9 @@
   color: white;
   font-size: 1.4rem;
   margin-top: 20px;
+}
+
+.detailsContainer {
 }
 
 .details {

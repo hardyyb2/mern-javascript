@@ -3,6 +3,7 @@ const types = {
   RECEIVE_NAME: "RECEIVE_NAME",
   RECEIVE_NAME_ERROR: "RECEIVE_NAME_ERROR",
   SAVED_NAME: "SAVED_NAME",
+  DELETED_NAME: "DELETED_NAME",
 };
 
 export default types;

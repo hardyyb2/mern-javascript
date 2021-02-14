@@ -10,3 +10,7 @@ export const getFromLocalStorage = (key) => {
   }
   return null;
 };
+
+export const deleteFromLocalStorage = (key) => {
+  localStorage.removeItem(key);
+};

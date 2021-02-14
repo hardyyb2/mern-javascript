@@ -18,14 +18,14 @@ const HomeComponent = () => {
   const [newAge, setNewAge] = useState("");
   const [err, setErr] = useState("");
 
-  const [oldName, setOldName] = useState("");
-  const [oldAge, setOldAge] = useState("");
+  const [savedName, setSavedName] = useState("");
+  const [savedAge, setSavedAge] = useState("");
 
   const checkDetails = () => {
     let userDetails = getFromLocalStorage(USER_DETAILS_KEY);
     if (userDetails) {
-      setOldName(userDetails.name);
-      setOldAge(userDetails.age);
+      setSavedName(userDetails.name);
+      setSavedAge(userDetails.age);
     }
   };
 
@@ -57,11 +57,27 @@ const HomeComponent = () => {
     }
   };
 
+  const handleDeleteName = () => {
+    dispatch(homeOperations.deleteName(savedName))
+      .then((res) => {
+        setSavedName("");
+        setSavedAge(0);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className={styles.root}>
-      {oldName ? (
-        <div className={styles.details}>
-          Welcome, {oldName} ( {oldAge} )
+      {savedName ? (
+        <div className={styles.detailsContainer}>
+          <div className={styles.details}>
+            Welcome, {savedName} ( {savedAge} )
+          </div>
+          <button onClick={handleDeleteName} className={styles.button}>
+            Delete
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.form}>
