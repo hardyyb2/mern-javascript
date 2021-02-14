@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Input } from "../common";
-import { getFromLocalStorage } from "../utils/functions";
-import { USER_DETAILS_KEY } from "../utils/constants";
 
 import { homeOperations } from "../store/ducks";
 
@@ -44,7 +42,10 @@ const HomeComponent = () => {
   };
 
   const handleDeleteName = () => {
-    dispatch(homeOperations.deleteName(name));
+    dispatch(homeOperations.deleteName(name)).then(() => {
+      setNewAge("");
+      setNewName("");
+    });
   };
 
   return (
