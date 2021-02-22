@@ -1,1 +1,4 @@
-All static assets goes into this folder
+# Details
+
+- **Directory Name** - assets
+- **Details** - requirements other than code. eg. images, fonts, etc.

@@ -1,6 +1,6 @@
 const { ErrorResponse } = require("../common");
-const { getDuplicate } = require("../utils");
-const { Messages } = require("../utils");
+const { getDuplicate } = require("../utils/functions");
+const { Messages } = require("../utils/constants");
 
 const { SERVER_ERROR } = Messages;
 

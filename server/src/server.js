@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const { NameRoutes } = require("./routes");
 const { errorHandler } = require("./middleware");
-const { Logs } = require("./utils");
+const { Logs } = require("./utils/functions");
 require("./services/db.service");
 
 dotenv.config();
