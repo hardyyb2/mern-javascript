@@ -4,6 +4,7 @@
 - **Details** - redux store to create and save actions and reducers (duck pattern)
 - **Files** -
   - _configureStore_ - redux configuration file to combine reducers and add other middlewares e.g. redux-thunk, redux-logger and also config for redux dev tools
+  - _reducers_ - combine different individual reducers present in ducks
 
 > More :
 >
