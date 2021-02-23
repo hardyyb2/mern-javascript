@@ -1,4 +1,4 @@
-const messages = {
+const Messages = {
   CREATED: "Created Name",
   DELETED: "Deleted Name",
   UPDATED: "Updated Name",
@@ -8,4 +8,5 @@ const messages = {
   PROVIDE_AGE: "Provide age",
   SERVER_ERROR: "Server Error, Please try again",
 };
-module.exports = messages;
+
+module.exports = { Messages };

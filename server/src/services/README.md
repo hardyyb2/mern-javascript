@@ -1,1 +1,7 @@
-All services for the server goes into this folder. Basically anything which needs to be instantiated once throughout the application.
+# Details
+
+- **Directory Name** - services
+- **Details** - connect to various services like database
+- **Files** :
+  - _db.service_ - Connect to MongoDB database
+    - **used in** - server

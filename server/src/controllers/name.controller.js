@@ -1,7 +1,7 @@
 const { NameModel } = require("../models");
 const { asyncHandler } = require("../middleware");
 const { ErrorResponse, send } = require("../common");
-const { Messages } = require("../utils");
+const { Messages } = require("../utils/constants");
 
 const {
   PROVIDE_NAME,
