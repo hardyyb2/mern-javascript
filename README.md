@@ -39,7 +39,7 @@
 
 - Rename **.env.example** to **.env** in client/ and server/
 - Install dependencies using (from root)
-  - **yarn install** or **npm install**
+  - **yarn install-all** or **npm install-all**
 - Start the app (from root)
   - **yarn start** or **npm start**
 - Project runs live on http://localhost:3000 (client), http://localhost:3001 (server)
