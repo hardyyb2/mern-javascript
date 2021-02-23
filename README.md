@@ -4,7 +4,7 @@
 
 ## About Project -
 
-- redux is setup for client and database config for server are already setup
+- redux for client and database config for server are already setup
 - Technologies used -
   - Client
     - React
@@ -42,7 +42,7 @@
   - **yarn install-all** or **npm install-all**
 - Start the app (from root)
   - **yarn start** or **npm start**
-- Project runs live on http://localhost:3000 (client), http://localhost:3001 (server)
+- Project runs live on http://localhost:3000 (client), http://localhost:3001 (server) [based on .env file config]
 
 <br />
 
